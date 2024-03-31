@@ -36,6 +36,10 @@ jobs:
       - name: Show build status
         run: git status
 
+      # Set environment variable with the output path
+      - name: Set output path
+        run: echo "CONTRIBUTION_GRID_SVG=dist/github-contribution-grid-snake.svg" >> $GITHUB_ENV
+
       # Push the changes
       - name: Push changes
         uses: ad-m/github-push-action@master
