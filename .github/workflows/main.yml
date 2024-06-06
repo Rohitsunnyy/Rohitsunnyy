@@ -15,19 +15,12 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Clone the Platane/snk repository
-        run: git clone https://github.com/Platane/snk.git
-
-      - name: Install dependencies
-        run: cd snk && npm install
-
       - name: Generate Snake animation
-        run: node snk/src/index.js --github_user_name Rohitsunnyy --svg_out_path ../dist/github-contribution-grid-snake.svg
+        run: |
+          docker run \
+            -e GITHUB_USER_NAME=Rohitsunnyy \
+            -e OUTPUT_PATH=dist/github-contribution-grid-snake.svg \
+            platane/snk
 
       - name: List files in the repository (debugging)
         run: ls -R
