@@ -20,11 +20,14 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Clone the Platane/snk repository
+        run: git clone https://github.com/Platane/snk.git
+
       - name: Install dependencies
-        run: npm install -g @platane/snk
+        run: cd snk && npm install
 
       - name: Generate Snake animation
-        run: snk generate --github_user_name Rohitsunnyy --svg_out_path dist/github-contribution-grid-snake.svg
+        run: cd snk && npm run generate -- --github_user_name Rohitsunnyy --svg_out_path ../dist/github-contribution-grid-snake.svg
 
       - name: List files in the repository (debugging)
         run: ls -R
