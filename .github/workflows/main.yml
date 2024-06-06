@@ -27,7 +27,7 @@ jobs:
         run: cd snk && npm install
 
       - name: Generate Snake animation
-        run: cd snk && npm run generate -- --github_user_name Rohitsunnyy --svg_out_path ../dist/github-contribution-grid-snake.svg
+        run: node snk/src/index.js --github_user_name Rohitsunnyy --svg_out_path ../dist/github-contribution-grid-snake.svg
 
       - name: List files in the repository (debugging)
         run: ls -R
