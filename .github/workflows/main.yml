@@ -15,11 +15,16 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v4
 
-      - name: Generate Snake animation
-        uses: Platane/snk@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          github_user_name: Rohitsunnyy
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install -g @platane/snk
+
+      - name: Generate Snake animation
+        run: snk generate --github_user_name Rohitsunnyy --svg_out_path dist/github-contribution-grid-snake.svg
 
       - name: List files in the repository (debugging)
         run: ls -R
@@ -37,4 +42,3 @@ jobs:
         with:
           name: snake
           path: dist/github-contribution-grid-snake.svg
-
