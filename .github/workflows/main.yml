@@ -1,0 +1,31 @@
+name: Generate Snake
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Generate Snake animation
+        uses: Platane/snk@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Generate snake animation in README.md
+          # (disable it if you already have an existing README file)
+          generate_image: false
+
+      - name: Upload the snake animation
+        uses: actions/upload-artifact@v2
+        with:
+          name: snake
+          path: dist/snake.svg
+
