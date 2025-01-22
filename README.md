@@ -8,9 +8,9 @@
 
 <p align="left"> <a href="https://twitter.com/heyrohitsunny" target="blank"><img src="https://img.shields.io/twitter/follow/heyrohitsunny?logo=twitter&style=for-the-badge" alt="heyrohitsunny" /></a> </p>
 
-- 🔭 I’m currently working on **Natural language processing**
+- 🔭 I’m currently working on **AI and Tools**
 
-- 🌱 I’m currently learning **Large language models**
+- 🌱 Professional Interests **AI in Healthcare, Sustainable AI**
 
 - 💬 Ask me about **Data Science, Machine Learning**
 
